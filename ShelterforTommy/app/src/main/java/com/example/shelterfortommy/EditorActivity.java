@@ -299,19 +299,6 @@ public class EditorActivity extends AppCompatActivity implements LoaderManager.L
         values.put(PetEntry.COLUMN_PET_GENDER, mGender);
         values.put(PetEntry.COLUMN_PET_WEIGHT, weight);
 
-//        //long newRowID=db.insert(PetEntry.TABLE_NAME,null,values);
-//        //return value of db.insert is int therefore check if -1 or not
-//        Uri newUri = getContentResolver().insert(PetEntry.Content_URI, values);
-//        //Return value is uri therefore check if null or not
-//        if (newUri == null)/*newRowID==-1*/ {
-//            //If the row ID is -1, then there was an error with insertion.
-//            Toast.makeText(this, "Error while saving the pet data!", Toast.LENGTH_LONG).show();
-//            return false;
-//        } else {
-//            //Toast.makeText(this,"Pet saved with row ID: "+newRowID,Toast.LENGTH_LONG).show();
-//            Toast.makeText(this, "Details saved", Toast.LENGTH_LONG).show();
-//
-//        }
         //Determine if the currentUri is null or not
         //If its null, insert a new pet else update existing
         if (mCurrentPetUri == null) {
