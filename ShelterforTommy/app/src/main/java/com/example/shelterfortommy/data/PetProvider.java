@@ -182,7 +182,11 @@ public class PetProvider extends ContentProvider {
         That's why we need to handle the cases accordingly.
          */
         if (values.getAsString(PetContract.PetEntry.COLUMN_PET_NAME).equals(""))
-            throw new IllegalArgumentException("Pet requires a name");
+        {
+//             throw new IllegalArgumentException("Pet requires a name");
+            Toast.makeText(getContext(),"Pet requires name!",Toast.LENGTH_SHORT).show();
+            return null;
+        }
 
 
         Integer gender = values.getAsInteger(PetContract.PetEntry.COLUMN_PET_GENDER);
@@ -309,7 +313,11 @@ public class PetProvider extends ContentProvider {
         if (contentValues.containsKey(PetContract.PetEntry.COLUMN_PET_NAME)) {
             String name = contentValues.getAsString(PetContract.PetEntry.COLUMN_PET_NAME);
             if (name.equals(""))
-                throw new IllegalArgumentException("Requires a valid name");
+            {
+//                 throw new IllegalArgumentException("Requires a valid name");
+                Toast.makeText(getContext(),"Pet requires name!",Toast.LENGTH_SHORT).show();
+                return null;
+            }
         }
         if (contentValues.containsKey(PetContract.PetEntry.COLUMN_PET_GENDER)) {
             Integer gender = contentValues.getAsInteger(PetContract.PetEntry.COLUMN_PET_GENDER);
